@@ -1,6 +1,16 @@
-# Text Summarization - GitHub README.md
+# TEXT SUMMARIZATION_129&231
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="logo leta.png" alt="Logo" width="360" height="180">
+
+<h1 align="center">TEXT SUMMARIZATION</h1>
+  <p align="center">
+    This project focuses on summarizing text .
+  </p>
+</div>
 ## Introduction
-Welcome to the Code Writer! This Streamlit application integrates with Google's Generative AI to provide a powerful and user-friendly platform for generating code in various programming languages. Whether you're a seasoned developer or a beginner, Code Writer simplifies the process of coding by transforming your ideas into code snippets.
+Welcome to the Text Summarixation! This Streamlit application integrates with Google's Generative AI to 
 
 ## Features
 Multiple Programming Languages: Choose from Python, Go, JavaScript, or TypeScript.
