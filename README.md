@@ -11,6 +11,8 @@
 </div>
 
 Welcome to the Text Summarixation! This Streamlit application integrates with Google's Generative AI to 
+### Authors
+- Leta Anindya Riyadi & Ertha Risky Pratisca
 
 
 ## Installation
