@@ -9,7 +9,7 @@
     This project focuses on summarizing text .
   </p>
 </div>
-## Introduction
+
 Welcome to the Text Summarixation! This Streamlit application integrates with Google's Generative AI to 
 
 ## Features
@@ -23,7 +23,7 @@ Enter Your Prompt: In the text input field, describe what you want to code.
 Generate Code: Click the 'Generate' button to produce the code based on your prompt.
 View the Result: The generated code will be displayed on the main screen.
 ## Installation
-To run Code Writer, you need to install Streamlit and set up the Google Generative AI API:
+To run Text Summarization, you need to install Streamlit and set up the Google Generative AI API:
 
     pip install streamlit
 
@@ -32,41 +32,43 @@ To run Code Writer, you need to install Streamlit and set up the Google Generati
 Set up your API key as per Google's Generative AI documentation and include it in the application (api.py file).
 
 ## Usage Example
-    import streamlit as st
-    import google.generativeai as genai
-    from api import api
+   import streamlit as st
+import google.generativeai as genai
+from api import api
 
-    # Configure the API key
-    genai.configure(api_key=api)
+# Configure the API key
+genai.configure(api_key=api)
 
-    # Set default parameters
-    defaults = {
-        'model': 'models/text-bison-001',
-        'temperature': 0.25,
-        'candidate_count': 1,
-        'top_k': 40,
-        'top_p': 0.95,
-    }
+# Set default parameters for text summarization
+defaults = {
+    'model': 'models/text-bison-001',  # Replace with a supported text summarizer model
+    'temperature': 0.25,
+    'candidate_count': 1,
+    'top_k': 40,
+    'top_p': 0.95,
+}
 
-    st.title('Code Writer')
-    st.write('You can ask me to code anything')
-    final_response = None
+st.title('Text Summarizer')
+st.write('You can ask me to summarize any text')
+final_response = None
 
-    # Creating a side panel for inputs
-    with st.sidebar:
-        st.write("## Code Generator Settings")
-        programming_language = st.selectbox("Choose the programming language:", 
-                                        ["Python", "Go", "JavaScript", "TypeScript"])
-        prompt = st.text_input("What do you want to code?")
-        if st.button('Generate'):
-            formatted_prompt = f"Write a {programming_language.lower()} code about {prompt}"
-            response = genai.generate_text(
-                **defaults,
-                prompt=formatted_prompt
-            )
-            final_response = response
-    if final_response != None:
-        st.write(final_response.result)
+# Creating a side panel for inputs
+with st.sidebar:
+    st.write("## Text Summarizer Settings")
+    # Create a text input for the text to be summarized
+    text_to_summarize = st.text_area("Enter the text to be summarized:")
+    # When the 'Summarize' button is pressed, generate the summary
+    if st.button('Summarize'):
+        # Include the language in the prompt
+        formatted_prompt = f"Write a code summary in English: {text_to_summarize}"
+        response = genai.generate_text(
+            **defaults,
+            prompt=formatted_prompt
+        )
+        final_response = response
+
+if final_response is not None:
+    st.write(final_response.result)
 ## Support
 For any queries or support, please open an issue on the project's GitHub repository.
 
