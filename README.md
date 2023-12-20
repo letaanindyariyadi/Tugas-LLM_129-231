@@ -1,4 +1,4 @@
-# Code Writer - GitHub README.md
+# Text Summarization - GitHub README.md
 ## Introduction
 Welcome to the Code Writer! This Streamlit application integrates with Google's Generative AI to provide a powerful and user-friendly platform for generating code in various programming languages. Whether you're a seasoned developer or a beginner, Code Writer simplifies the process of coding by transforming your ideas into code snippets.
 
