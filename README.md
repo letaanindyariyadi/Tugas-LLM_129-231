@@ -31,15 +31,15 @@ To run Text Summarization, you need to install Streamlit and set up the Google G
 
 Set up your API key as per Google's Generative AI documentation and include it in the application (api.py file).
 
-## Usage Example
+
    import streamlit as st
 import google.generativeai as genai
 from api import api
 
-# Configure the API key
+
 genai.configure(api_key=api)
 
-# Set default parameters for text summarization
+
 defaults = {
     'model': 'models/text-bison-001',  # Replace with a supported text summarizer model
     'temperature': 0.25,
@@ -52,7 +52,7 @@ st.title('Text Summarizer')
 st.write('You can ask me to summarize any text')
 final_response = None
 
-# Creating a side panel for inputs
+
 with st.sidebar:
     st.write("## Text Summarizer Settings")
     # Create a text input for the text to be summarized
